@@ -3,3 +3,8 @@
     height: 50vh;
     border: 2px black solid;
 }
+
+#lang-popup {
+    height: 100vh;
+    background-color: gray;
+}
