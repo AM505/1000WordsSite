@@ -12,6 +12,9 @@ const gameSessionData = {
 var langSelect = document.getElementById("lang-select");
 langSelect.addEventListener("submit", handleLangSubmit, false); 
 
+var card = document.getElementById("flip-card")
+card.addEventListener("click", handleCardClick)
+
 
 function handleLangSubmit(event){
     event.preventDefault();
@@ -42,7 +45,8 @@ setCardVal = (text) => {
 }
 
 
-// event listener for submiting answer 
-
-// event listener for flipping card
+function handleCardClick(event){
+    let currentpair = gameData[gameSessionData.currentPos];
+    setCardVal(currentpair["translation"]);
+}
 
