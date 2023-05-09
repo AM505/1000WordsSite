@@ -3,8 +3,9 @@
 var gameData; // global for translation data
 
 const gameSessionData = {
-    lang:"",
-    currentPos:0,
+    lang:           "",
+    currentPos:      0,
+    indexOfSeen:    {},
 }
 
 
