@@ -1,4 +1,8 @@
-// define objects for global game data
+//TODOs:
+// card should flip back when clicked again
+// should record which answers you got correct or how many attempts it took
+// should be able to exit early and see what was correct
+// should get pairs by random 
 
 var gameData; // global for translation data
 
@@ -18,23 +22,24 @@ card.addEventListener("click", handleCardClick)
 
 document.getElementById("ans-submit").addEventListener("submit", handleAnswerSubmit, false)
 
-function handleLangSubmit(event){
+document.getElementById("skip-button").addEventListener("click", handleSkip)
+
+async function handleLangSubmit(event){
     event.preventDefault();
+
     let lang = document.getElementById("lang").value;
-    getJsonFromFile("resourses/data/"+lang+'.json');
+
+    let response = await fetch("resourses/data/"+lang+".json");
+    gameData = await response.json();
+    
+    shuffle(gameData);
+    setCardVal(gameData[0]["original"]);
 
     setLang(lang);
     hideLangSelect();
 }
 
-async function getJsonFromFile(file) {
-    let response = await fetch(file);
-    gameData = await response.json();
-    // must find a way to avoid calling set card val from getText
-    setCardVal(gameData[0]["original"]);
-  }
-
-  setLang = (l) => {
+setLang = (l) => {
     gameSessionData.lang = l;
 }
 
@@ -89,4 +94,25 @@ showWinAnim = () => {
 
 showLoseAnim = () => {
     document.getElementById('answer').style.background = 'red';
+}
+
+function handleSkip(event){
+    console.log("hello")
+    goToNextPair()
+}
+
+/**
+ * Shuffles array in place.
+ * @param {Array} a items An array containing the items.
+ * from https://stackoverflow.com/questions/60662796/shuffle-array-in-js
+ */
+function shuffle (arr) {
+    var j, x, index;
+    for (index = arr.length - 1; index > 0; index--) {
+        j = Math.floor(Math.random() * (index + 1));
+        x = arr[index];
+        arr[index] = arr[j];
+        arr[j] = x;
+    }
+    return arr;
 }
