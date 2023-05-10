@@ -12,13 +12,12 @@ const gameSessionData = {
     indexOfSeen:    {},
 }
 
+var flipped = false;
 
 // add event listener for selecting languge 
-var langSelect = document.getElementById("lang-select");
-langSelect.addEventListener("submit", handleLangSubmit, false); 
+document.getElementById("lang-select").addEventListener("submit", handleLangSubmit, false); 
 
-var card = document.getElementById("flip-card")
-card.addEventListener("click", handleCardClick)
+document.getElementById("flip-card").addEventListener("click", handleCardClick)
 
 document.getElementById("ans-submit").addEventListener("submit", handleAnswerSubmit, false)
 
@@ -31,7 +30,7 @@ async function handleLangSubmit(event){
 
     let response = await fetch("resourses/data/"+lang+".json");
     gameData = await response.json();
-    
+
     shuffle(gameData);
     setCardVal(gameData[0]["original"]);
 
@@ -53,7 +52,14 @@ setCardVal = (text) => {
 
 function handleCardClick(event){
     let currentpair = gameData[gameSessionData.currentPos];
-    setCardVal(currentpair["translation"]);
+    if(!flipped){
+        setCardVal(currentpair["translation"]);
+        flipped = !flipped;
+    }
+    else{
+        setCardVal(currentpair["original"]);
+        flipped = !flipped;
+    }
 }
 
 function handleAnswerSubmit(event){
@@ -97,7 +103,6 @@ showLoseAnim = () => {
 }
 
 function handleSkip(event){
-    console.log("hello")
     goToNextPair()
 }
 
