@@ -2,6 +2,17 @@
     width: 50vh;
     height: 50vh;
     border: 2px black solid;
+    text-align:center;
+}
+
+#card-text{
+    margin:auto;
+    line-height:51px;
+    vertical-align:middle;
+}
+
+#lang-select{
+    padding: 20%;
 }
 
 #lang-popup {
