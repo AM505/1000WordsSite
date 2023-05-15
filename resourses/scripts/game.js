@@ -97,7 +97,11 @@ goToNextPair = () => {
 }
 
 showWinAnim = () => {
-    document.getElementById("win-banner").style.display = 'inline';  
+    let winBanner = document.getElementById("win-banner")
+    winBanner.style.display = 'inline';  
+    setTimeout(function(){
+        winBanner.style.display = 'none';
+    }, 6000);
 }
 
 showLoseAnim = () => {
