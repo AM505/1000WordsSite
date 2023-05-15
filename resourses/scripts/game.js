@@ -15,7 +15,11 @@ const gameSessionData = {
 var flipped = false;
 
 // add event listener for selecting languge 
-document.getElementById("lang-select").addEventListener("submit", handleLangSubmit, false); 
+
+const urlParams = new URLSearchParams(window.location.search);
+const lang = urlParams.get('language');
+console.log(lang)
+document.addEventListener('DOMContentLoaded', handleLangSubmit, false); 
 
 document.getElementById("flip-card").addEventListener("click", handleCardClick)
 
@@ -26,8 +30,6 @@ document.getElementById("skip-button").addEventListener("click", handleSkip)
 async function handleLangSubmit(event){
     event.preventDefault();
 
-    let lang = document.getElementById("lang").value;
-
     let response = await fetch("resourses/data/"+lang+".json");
     gameData = await response.json();
 
@@ -35,16 +37,12 @@ async function handleLangSubmit(event){
     setCardVal(gameData[0]["original"]);
 
     setLang(lang);
-    hideLangSelect();
 }
 
 setLang = (l) => {
     gameSessionData.lang = l;
 }
 
-hideLangSelect = () =>{
-    document.getElementById("lang-popup").style.display = 'none';  
-}
 
 setCardVal = (text) => {
     document.getElementById("card-text").innerHTML = text;
