@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="resourses/css/style.css">
 </head>
 <body>
-    <div id="lang-popup">
+    <div id="lang-popup" class="central-widget">
         <form action="" method="post" id="lang-select">
             <select name="language" id="lang">
                 <option value="Turkish">Turkish</option>
@@ -18,8 +18,15 @@
             <input type="submit" value="let's go">
         </form>
     </div>
-    <div id="central-widget">
+    <div class="central-widget">
 
+        <div id="lives-box">
+            <h1 id="lives"></h1>
+        </div>
+
+        <div id="correct-ans">
+            <h1 id=""></h1>
+        </div>
 
         <div id="flip-card">
             <h1 id="card-text"></h1>
@@ -31,6 +38,10 @@
         </form>
 
         <button id="skip-button">SKIP ></button>
+    </div>
+
+    <div id="win-banner">
+
     </div>
 
     <script src="resourses/scripts/game.js"></script>

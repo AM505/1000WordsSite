@@ -71,6 +71,8 @@ function handleAnswerSubmit(event){
         //play some kind of win anim and go to next pair 
         goToNextPair();
         showWinAnim();
+        //clear text box
+        clearTextBox();
     }
 
     else{
@@ -95,11 +97,16 @@ goToNextPair = () => {
 }
 
 showWinAnim = () => {
-    document.getElementById('answer').style.background = 'green';
+    document.getElementById("win-banner").style.display = 'inline';  
 }
 
 showLoseAnim = () => {
     document.getElementById('answer').style.background = 'red';
+}
+
+clearTextBox = () => {
+    document.getElementById('answer').style.background = 'white';
+    document.getElementById('answer').value = "";
 }
 
 function handleSkip(event){
