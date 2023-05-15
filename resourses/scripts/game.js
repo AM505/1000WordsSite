@@ -1,4 +1,8 @@
-// define objects for global game data
+//TODOs:
+// card should flip back when clicked again
+// should record which answers you got correct or how many attempts it took
+// should be able to exit early and see what was correct
+// should get pairs by random 
 
 var gameData; // global for translation data
 
@@ -8,33 +12,33 @@ const gameSessionData = {
     indexOfSeen:    {},
 }
 
+var flipped = false;
 
 // add event listener for selecting languge 
-var langSelect = document.getElementById("lang-select");
-langSelect.addEventListener("submit", handleLangSubmit, false); 
+document.getElementById("lang-select").addEventListener("submit", handleLangSubmit, false); 
 
-var card = document.getElementById("flip-card")
-card.addEventListener("click", handleCardClick)
+document.getElementById("flip-card").addEventListener("click", handleCardClick)
 
 document.getElementById("ans-submit").addEventListener("submit", handleAnswerSubmit, false)
 
-function handleLangSubmit(event){
+document.getElementById("skip-button").addEventListener("click", handleSkip)
+
+async function handleLangSubmit(event){
     event.preventDefault();
+
     let lang = document.getElementById("lang").value;
-    getJsonFromFile("resourses/data/"+lang+'.json');
+
+    let response = await fetch("resourses/data/"+lang+".json");
+    gameData = await response.json();
+
+    shuffle(gameData);
+    setCardVal(gameData[0]["original"]);
 
     setLang(lang);
     hideLangSelect();
 }
 
-async function getJsonFromFile(file) {
-    let response = await fetch(file);
-    gameData = await response.json();
-    // must find a way to avoid calling set card val from getText
-    setCardVal(gameData[0]["original"]);
-  }
-
-  setLang = (l) => {
+setLang = (l) => {
     gameSessionData.lang = l;
 }
 
@@ -48,7 +52,14 @@ setCardVal = (text) => {
 
 function handleCardClick(event){
     let currentpair = gameData[gameSessionData.currentPos];
-    setCardVal(currentpair["translation"]);
+    if(!flipped){
+        setCardVal(currentpair["translation"]);
+        flipped = !flipped;
+    }
+    else{
+        setCardVal(currentpair["original"]);
+        flipped = !flipped;
+    }
 }
 
 function handleAnswerSubmit(event){
@@ -60,6 +71,8 @@ function handleAnswerSubmit(event){
         //play some kind of win anim and go to next pair 
         goToNextPair();
         showWinAnim();
+        //clear text box
+        clearTextBox();
     }
 
     else{
@@ -84,9 +97,38 @@ goToNextPair = () => {
 }
 
 showWinAnim = () => {
-    document.getElementById('answer').style.background = 'green';
+    let winBanner = document.getElementById("win-banner")
+    winBanner.style.display = 'inline';  
+    setTimeout(function(){
+        winBanner.style.display = 'none';
+    }, 6000);
 }
 
 showLoseAnim = () => {
     document.getElementById('answer').style.background = 'red';
+}
+
+clearTextBox = () => {
+    document.getElementById('answer').style.background = 'white';
+    document.getElementById('answer').value = "";
+}
+
+function handleSkip(event){
+    goToNextPair()
+}
+
+/**
+ * Shuffles array in place.
+ * @param {Array} a items An array containing the items.
+ * from https://stackoverflow.com/questions/60662796/shuffle-array-in-js
+ */
+function shuffle (arr) {
+    var j, x, index;
+    for (index = arr.length - 1; index > 0; index--) {
+        j = Math.floor(Math.random() * (index + 1));
+        x = arr[index];
+        arr[index] = arr[j];
+        arr[j] = x;
+    }
+    return arr;
 }
