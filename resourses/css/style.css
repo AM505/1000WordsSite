@@ -29,27 +29,30 @@
     align-items: center;
 }
 
-
-
-
 #win-banner{
     display:none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
-
+    width: 100px;
+    height: 50px;
     background-color: red;
     animation-name: example;
     animation-duration: 2s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 3;
+
+    text-align: center;
+}
+
+#banner-text{
+    color:white;
 }
 
 @keyframes example {
-    0% {width: 100px; height: 100px;}
-    50% {width: 150px; height: 150px;}
-    100% {width: 100px; height: 100px;}
+    0% {width: 100px; height: 50px;}
+    50% {width: 150px; height: 75px;}
+    100% {width: 100px; height: 50px;}
 
   }
 
