@@ -10,12 +10,20 @@ const gameSessionData = {
     lang:           "",
     currentPos:      0,
     indexOfSeen:    {},
+    lives:          10,
+    cor_ans:        0,
 }
 
 var flipped = false;
 
+
 // add event listener for selecting languge 
-document.getElementById("lang-select").addEventListener("submit", handleLangSubmit, false); 
+
+const urlParams = new URLSearchParams(window.location.search);
+const lang = urlParams.get('language');
+
+document.addEventListener('DOMContentLoaded', handleLangSubmit, false); 
+
 
 document.getElementById("flip-card").addEventListener("click", handleCardClick)
 
@@ -23,10 +31,10 @@ document.getElementById("ans-submit").addEventListener("submit", handleAnswerSub
 
 document.getElementById("skip-button").addEventListener("click", handleSkip)
 
+document.getElementById('lives').innerHTML  = gameSessionData.lives;
+
 async function handleLangSubmit(event){
     event.preventDefault();
-
-    let lang = document.getElementById("lang").value;
 
     let response = await fetch("resourses/data/"+lang+".json");
     gameData = await response.json();
@@ -35,16 +43,12 @@ async function handleLangSubmit(event){
     setCardVal(gameData[0]["original"]);
 
     setLang(lang);
-    hideLangSelect();
 }
 
 setLang = (l) => {
     gameSessionData.lang = l;
 }
 
-hideLangSelect = () =>{
-    document.getElementById("lang-popup").style.display = 'none';  
-}
 
 setCardVal = (text) => {
     document.getElementById("card-text").innerHTML = text;
@@ -97,6 +101,8 @@ goToNextPair = () => {
 }
 
 showWinAnim = () => {
+    gameSessionData.cor_ans += 1;
+    document.getElementById('cor-ans').innerHTML  = gameSessionData.cor_ans;
     let winBanner = document.getElementById("win-banner")
     winBanner.style.display = 'inline';  
     setTimeout(function(){
@@ -106,6 +112,8 @@ showWinAnim = () => {
 
 showLoseAnim = () => {
     document.getElementById('answer').style.background = 'red';
+    gameSessionData.lives -= 1;
+    document.getElementById('lives').innerHTML  = gameSessionData.lives;
 }
 
 clearTextBox = () => {
