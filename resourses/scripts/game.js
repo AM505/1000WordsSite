@@ -10,22 +10,27 @@ const gameSessionData = {
     lang:           "",
     currentPos:      0,
     indexOfSeen:    {},
+    lives:          10,
 }
 
 var flipped = false;
+
 
 // add event listener for selecting languge 
 
 const urlParams = new URLSearchParams(window.location.search);
 const lang = urlParams.get('language');
-console.log(lang)
+
 document.addEventListener('DOMContentLoaded', handleLangSubmit, false); 
+
 
 document.getElementById("flip-card").addEventListener("click", handleCardClick)
 
 document.getElementById("ans-submit").addEventListener("submit", handleAnswerSubmit, false)
 
 document.getElementById("skip-button").addEventListener("click", handleSkip)
+
+document.getElementById('lives').innerHTML  = gameSessionData.lives;
 
 async function handleLangSubmit(event){
     event.preventDefault();

@@ -1,6 +1,6 @@
 #flip-card{
     width: 100%;
-    height: 700px;
+    height: 600px;
     border: 2px black solid;
     text-align:center;
 }
@@ -62,7 +62,39 @@
   }
 
 #lives-box{
+    float:left;
     border: 2px black solid;
     border-radius: 15px;
     width:150px;
+}
+
+#correct-ans{
+    float:right;
+    border: 2px black solid;
+    border-radius: 15px;
+    width:150px;
+}
+
+#ans-submit{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.buttons{
+    height: 50px;
+    /*font-size:large;*/
+}
+
+.text-areas{
+    height:50px;
+    border-radius: 15px;
+    font-size:large;
+}
+
+.fake-text-areas{
+    line-height: 15px;
+}
+
+.top-panel{
+    display: inline-block;
 }
