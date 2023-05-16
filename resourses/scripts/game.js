@@ -109,6 +109,8 @@ showWinAnim = () => {
 
 showLoseAnim = () => {
     document.getElementById('answer').style.background = 'red';
+    gameSessionData.lives -= 1;
+    document.getElementById('lives').innerHTML  = gameSessionData.lives;
 }
 
 clearTextBox = () => {
