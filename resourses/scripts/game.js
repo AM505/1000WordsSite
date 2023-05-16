@@ -11,6 +11,7 @@ const gameSessionData = {
     currentPos:      0,
     indexOfSeen:    {},
     lives:          10,
+    cor_ans:        0,
 }
 
 var flipped = false;
@@ -100,6 +101,8 @@ goToNextPair = () => {
 }
 
 showWinAnim = () => {
+    gameSessionData.cor_ans += 1;
+    document.getElementById('cor-ans').innerHTML  = gameSessionData.cor_ans;
     let winBanner = document.getElementById("win-banner")
     winBanner.style.display = 'inline';  
     setTimeout(function(){
