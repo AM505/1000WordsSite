@@ -12,14 +12,15 @@
 }
 
 #lang-select{
-    padding: 20%;
+    padding: 10px;
 }
 
 #lang-popup {
-    position: fixed;
-    height: 100vh;
-    background-color: gray;
+    width:50%;
+    margin: auto;
+    border: 3px solid gray;
 }
+
 
 /* from w3 schools https://www.w3schools.com/css/css_align.asp*/
 .central-widget {
@@ -96,5 +97,16 @@
 }
 
 .top-panel{
+    display: inline-block;
+}
+
+.center-text{
+    text-align: center;
+}
+
+body {
+    text-align: center;
+}
+form {
     display: inline-block;
 }
