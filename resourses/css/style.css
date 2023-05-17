@@ -36,6 +36,8 @@
     font-size: 18px;
   }
 /*   end         */
+
+/* css animations from https://www.w3schools.com/css/css3_animations.asp*/
 #win-banner{
     display:none;
     position: fixed;
@@ -61,6 +63,8 @@
     100% {width: 100px; height: 50px;}
 
   }
+
+/* end */
 
 #lives-box{
     float:left;

@@ -48,14 +48,30 @@ Wirefames can be seen here:
 
 
 -   #### First Time Visitor Goals
+     1. Understand what the site is for.
+     a. On visiting the site the user is given a statement infoming of the purpose of the site
+     b.The user is instructed to choose the language they want to practaice with
 
 -   #### Returning Visitor Goals
+    Returning visitors should be able to:
+    1. track their progress in some way.
+    a. There is no login or cookies, however users can track their progress by counting how many answers they get right, or if they need to flip the card to see the answer.
 
 -   #### Frequent User Goals
 
 ### Further Testing
 
+
+    * The Website was tested on Google Chrome, FireFox, Microsoft Edge and Safari browsers.
+    * The website was viewed on a variety of devices such as Desktop, Laptop, motarolla G9
+    * Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+
+
 ### Known Bugs
+
+* Text on the card can over flow and appear outside of the card if too long.
+
+* Text validation needs work. Trailing whitespace charecters are not ignored and items seperated by comma are treated as seperate correct answers. However if entered seperated by a comma as shown on the card, they will not be accepted.
 
 ## Deployment
 
@@ -98,7 +114,7 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 ```
 $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-> Cloning into `CI-Clone`...
+> Cloning into `1000Words-Clone`...
 > remote: Counting objects: 10, done.
 > remote: Compressing objects: 100% (8/8), done.
 > remove: Total 10 (delta 1), reused 10 (delta 1)
@@ -110,7 +126,11 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 ## Credits
 
 ### Code
+* The implementation of the suffle array algorithm comes from [this stackoverflow post](https://stackoverflow.com/questions/60662796/shuffle-array-in-js).
 
+* The css for centering a div comes from this [w3 schools page](https://www.w3schools.com/css/css_align.asp*/).
+
+* css animations from this [w3 schools page](https://www.w3schools.com/css/css3_animations.asp*/).
 ### Content
 
 ### Media
