@@ -6,33 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1000Words</title>
     <link rel="stylesheet" href="resourses/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <div class="central-widget">
-       <div class="center">
+
             <div class="top-panel">
-                <div id="lives-box" class="text-areas fake-text-areas">
-                    <h1 id="lives"></h1>
+                <div id="lives-box" class="fake-text-areas">
+                    <div>
+                        <i class="fa-solid fa-heart" style="color: #eb1414;"></i>
+                    </div>
+                    <div id="lives">
+                    </div>
                 </div>
-    
-                <div id="correct-ans" class="text-areas fake-text-areas">
-                    <h1 id="cor-ans"></h1>
+                <div id="correct-ans" class="fake-text-areas">
+                    <div>
+                        <i class="fa-regular fa-square-check" style="color: #22aa24;"></i>
+                    </div>
+                    <div id="cor-ans">
+                    </div>
+
                 </div>
             </div>
-
 
             <div id="flip-card">
                 <h1 id="card-text"></h1>
             </div>
 
-            <form action="" id="ans-submit">
-                <input type="text" id="answer" class="text-areas">
-                <input type="submit" value="Let's Go" class="buttons">
-            </form>
+            <div id="bottom-panel">
+                <form action="" id="ans-submit">
+                    <input type="text" id="answer" class="text-areas">
+                    <input type="submit" value="Let's Go" class="buttons">
+                </form>
 
-            <button id="skip-button" class="buttons">SKIP ></button>
-        </div>
+                <button id="skip-button" class="buttons">SKIP ></button>
+            </div>
 
     </div>
 

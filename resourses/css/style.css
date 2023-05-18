@@ -3,10 +3,12 @@
     height: 600px;
     border: 2px black solid;
     text-align:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #card-text{
-    margin:auto;
     line-height:500px;
     vertical-align:middle;
 }
@@ -24,9 +26,10 @@
 
 /* from w3 schools https://www.w3schools.com/css/css_align.asp*/
 .central-widget {
-    position: relative;
-  }
-  
+    display: flex;
+    flex-direction: column;
+}
+/*
   .center {
     position: absolute;
     top: 50%;
@@ -35,7 +38,10 @@
     text-align: center;
     font-size: 18px;
   }
+  */
 /*   end         */
+
+
 
 /* css animations from https://www.w3schools.com/css/css3_animations.asp*/
 #win-banner{
@@ -66,19 +72,7 @@
 
 /* end */
 
-#lives-box{
-    float:left;
-    border: 2px black solid;
-    border-radius: 15px;
-    width:150px;
-}
 
-#correct-ans{
-    float:right;
-    border: 2px black solid;
-    border-radius: 15px;
-    width:150px;
-}
 
 #ans-submit{
     padding-top: 20px;
@@ -97,11 +91,23 @@
 }
 
 .fake-text-areas{
-    line-height: 15px;
+    display: flex;
+    justify-content:center;
+    height:50px;
+    border-radius: 15px;
+    margin: 10px;
+    border: 2px black solid;
+    border-radius: 15px;
+    width:150px;
+    font-size:3em;
+
 }
 
+
 .top-panel{
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+
 }
 
 .center-text{
