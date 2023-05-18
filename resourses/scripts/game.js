@@ -22,8 +22,9 @@ var flipped = false;
 const urlParams = new URLSearchParams(window.location.search);
 const lang = urlParams.get('language');
 
-document.addEventListener('DOMContentLoaded', handleLangSubmit, false); 
+document.getElementById('answer').classList.add('active-animation');
 
+document.addEventListener('DOMContentLoaded', handleLangSubmit, false); 
 
 document.getElementById("flip-card").addEventListener("click", handleCardClick)
 
@@ -111,9 +112,17 @@ showWinAnim = () => {
 }
 
 showLoseAnim = () => {
-    document.getElementById('answer').style.background = 'red';
+    let ansBox = document.getElementById('answer');
+    ansBox.style.animation = 'shake 0.5s 3'
+    ansBox.style.background = 'red';
     gameSessionData.lives -= 1;
     document.getElementById('lives').innerHTML  = gameSessionData.lives;
+
+    setTimeout(function(){
+        document.getElementById('answer').style.animation = '';
+        ansBox.style.background = 'white';
+        ansBox.value = '';
+    }, 3000);
 }
 
 clearTextBox = () => {
