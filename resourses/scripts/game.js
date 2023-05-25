@@ -7,11 +7,11 @@
 var gameData; // global for translation data
 
 const gameSessionData = {
-    lang:           "",
-    currentPos:      0,
-    indexOfSeen:    {},
-    lives:          10,
-    cor_ans:        0,
+    lang: "",
+    currentPos: 0,
+    indexOfSeen: {},
+    lives: 10,
+    cor_ans: 0,
 }
 
 var flipped = false;
@@ -24,7 +24,7 @@ const lang = urlParams.get('language');
 
 document.getElementById('answer').classList.add('active-animation');
 
-document.addEventListener('DOMContentLoaded', handleLangSubmit, false); 
+document.addEventListener('DOMContentLoaded', handleLangSubmit, false);
 
 document.getElementById("flip-card").addEventListener("click", handleCardClick)
 
@@ -32,12 +32,12 @@ document.getElementById("ans-submit").addEventListener("submit", handleAnswerSub
 
 document.getElementById("skip-button").addEventListener("click", handleSkip)
 
-document.getElementById('lives').innerHTML  = gameSessionData.lives;
+document.getElementById('lives').innerHTML = gameSessionData.lives;
 
-async function handleLangSubmit(event){
+async function handleLangSubmit(event) {
     event.preventDefault();
 
-    let response = await fetch("resourses/data/"+lang+".json");
+    let response = await fetch("resourses/data/" + lang + ".json");
     gameData = await response.json();
 
     shuffle(gameData);
@@ -55,24 +55,24 @@ setCardVal = (text) => {
     document.getElementById("card-text").innerHTML = text;
 }
 
-function handleCardClick(event){
+function handleCardClick(event) {
     let currentpair = gameData[gameSessionData.currentPos];
-    if(!flipped){
+    if (!flipped) {
         setCardVal(currentpair["translation"]);
         flipped = !flipped;
     }
-    else{
+    else {
         setCardVal(currentpair["original"]);
         flipped = !flipped;
     }
 }
 
-function handleAnswerSubmit(event){
+function handleAnswerSubmit(event) {
     event.preventDefault();
     let ans = document.getElementById('answer').value;
     let currentpair = gameData[gameSessionData.currentPos];
     // check if ans close or one of accepted
-    if(ansAccepted(ans, currentpair["translation"])){
+    if (ansAccepted(ans, currentpair["translation"])) {
         //play some kind of win anim and go to next pair 
         goToNextPair();
         showWinAnim();
@@ -80,7 +80,7 @@ function handleAnswerSubmit(event){
         clearTextBox();
     }
 
-    else{
+    else {
         //prompt user to guess again 
         showLoseAnim();
     }
@@ -90,12 +90,12 @@ ansAccepted = (ans, corrAns) => {
     ans = ans.toLowerCase();
     corrAns = corrAns.toLowerCase();
     let ansArray = corrAns.split(',')
-  
+
     return ansArray.includes(ans);
 }
 
 goToNextPair = () => {
-    gameSessionData.currentPos+=1;
+    gameSessionData.currentPos += 1;
     let currentpair = gameData[gameSessionData.currentPos];
     setCardVal(currentpair["original"]);
 
@@ -103,12 +103,12 @@ goToNextPair = () => {
 
 showWinAnim = () => {
     gameSessionData.cor_ans += 1;
-    document.getElementById('cor-ans').innerHTML  = gameSessionData.cor_ans;
+    document.getElementById('cor-ans').innerHTML = gameSessionData.cor_ans;
     let winBanner = document.getElementById("win-banner")
-    winBanner.style.display = 'inline';  
-    setTimeout(function(){
+    winBanner.style.display = 'inline';
+    setTimeout(function () {
         winBanner.style.display = 'none';
-    }, 6000);
+    }, 2000);
 }
 
 showLoseAnim = () => {
@@ -116,9 +116,9 @@ showLoseAnim = () => {
     ansBox.style.animation = 'shake 0.5s 3'
     ansBox.style.background = 'red';
     gameSessionData.lives -= 1;
-    document.getElementById('lives').innerHTML  = gameSessionData.lives;
+    document.getElementById('lives').innerHTML = gameSessionData.lives;
 
-    setTimeout(function(){
+    setTimeout(function () {
         document.getElementById('answer').style.animation = '';
         ansBox.style.background = 'white';
         ansBox.value = '';
@@ -130,7 +130,7 @@ clearTextBox = () => {
     document.getElementById('answer').value = "";
 }
 
-function handleSkip(event){
+function handleSkip(event) {
     goToNextPair()
 }
 
@@ -139,7 +139,7 @@ function handleSkip(event){
  * @param {Array} a items An array containing the items.
  * from https://stackoverflow.com/questions/60662796/shuffle-array-in-js
  */
-function shuffle (arr) {
+function shuffle(arr) {
     var j, x, index;
     for (index = arr.length - 1; index > 0; index--) {
         j = Math.floor(Math.random() * (index + 1));

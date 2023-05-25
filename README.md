@@ -5,13 +5,15 @@ Site to show the first 1000 words in a few languages
 -   ### User stories
 
     -   #### First Time Visitor Goals
-        First time users should be able to:
-        1. Understand what the site is for.
-        1. Choose what language they want to use.
+        As a first time user I want to
+        1. Easily understand what the site is for and how to use it.
+        1. Be able to choose what language I want to use.
+        1. Be able to 
 
     -   #### Returning Visitor Goals
-        Returning visitors should be able to:
-        1. track their progress in some way.
+        As a returning visitor I should be able to:
+        1. track my progress in some way.
+        1. to continue enjoy playing the game. 
 
     -   #### Frequent User Goals
 
@@ -132,6 +134,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 * css animations from this [w3 schools page](https://www.w3schools.com/css/css3_animations.asp*/).
 ### Content
+* Followed code institiue example for readme.md 
 
 ### Media
 

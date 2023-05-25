@@ -1,25 +1,26 @@
-#flip-card{
+#flip-card {
     width: 100%;
     height: 500px;
     border: 5px slategray solid;
-    text-align:center;
+    margin-right: 5px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 15px;
 }
 
-#card-text{
+#card-text {
     /*line-height:500px;*/
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
-#lang-select{
+#lang-select {
     padding: 10px;
 }
 
 #lang-popup {
-    width:50%;
+    width: 50%;
     margin: auto;
     border: 3px solid gray;
 }
@@ -28,7 +29,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 15px;
     min-width: 250px;
 }
 
@@ -49,35 +50,33 @@
 
 
 /* css animations from https://www.w3schools.com/css/css3_animations.asp*/
-#win-banner{
-    display:none;
+#win-banner {
+    display: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 90%;
     height: 50px;
+    width: 100%;
     background-color: red;
     animation-name: example;
     animation-duration: 2s;
-    animation-iteration-count: 3;
-
+    animation-iteration-count: 1;
+    transform: translateY(100%);
     text-align: center;
 }
 
-#banner-text{
-    color:white;
+#banner-text {
+    color: white;
 }
 
 @keyframes example {
-    0% {width: 100px; height: 50px;}
-    50% {width: 150px; height: 75px;}
-    100% {width: 100px; height: 50px;}
-
-  }
+    100% {
+        transform: translateY(0%);
+    }
+}
 
 /* end */
 
-#ans-submit{
+#ans-submit {
     padding-top: 20px;
     padding-bottom: 20px;
     display: flex;
@@ -85,49 +84,49 @@
 
 }
 
-#ans-submit > input{
+#ans-submit>input {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.buttons{
+.buttons {
     height: 50px;
-    font-size:large;
+    font-size: large;
     border-radius: 15px;
     background-color: #19A7CE;
     font-weight: bold;
 }
 
-.text-areas{
-    height:50px;
+.text-areas {
+    height: 50px;
     border-radius: 15px;
-    font-size:large;
+    font-size: large;
 }
 
-.fake-text-areas{
+.fake-text-areas {
     display: flex;
-    justify-content:center;
-    height:60px;
+    justify-content: center;
+    height: 60px;
     border-radius: 15px;
     margin: 10px;
     border: 2px black solid;
     border-radius: 15px;
-    width:150px;
-    font-size:3em;
+    width: 150px;
+    font-size: 3em;
 
 }
 
-.fake-text-areas > div {
+.fake-text-areas>div {
     margin-left: 5px;
     margin-right: 5px;
 }
 
-.top-panel{
+.top-panel {
     display: flex;
     justify-content: center;
 }
 
-.center-text{
+.center-text {
     text-align: center;
 }
 
@@ -138,17 +137,49 @@ body {
 #lang-select {
     display: inline-block;
 }
-  
-  @keyframes shake {
-    0% { transform: translate(1px, 0px); }
-    10% { transform: translate(-1px, 0px); }
-    20% { transform: translate(-3px, 0px); }
-    30% { transform: translate(3px, 0px); }
-    40% { transform: translate(1px, 0px); }
-    50% { transform: translate(-1px, 0px); }
-    60% { transform: translate(-3px, 0px); }
-    70% { transform: translate(3px, 0px); }
-    80% { transform: translate(-1px, 0px); }
-    90% { transform: translate(1px, 0px); }
-    100% { transform: translate(1px, 0px); }
-  }
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 0px);
+    }
+
+    10% {
+        transform: translate(-1px, 0px);
+    }
+
+    20% {
+        transform: translate(-3px, 0px);
+    }
+
+    30% {
+        transform: translate(3px, 0px);
+    }
+
+    40% {
+        transform: translate(1px, 0px);
+    }
+
+    50% {
+        transform: translate(-1px, 0px);
+    }
+
+    60% {
+        transform: translate(-3px, 0px);
+    }
+
+    70% {
+        transform: translate(3px, 0px);
+    }
+
+    80% {
+        transform: translate(-1px, 0px);
+    }
+
+    90% {
+        transform: translate(1px, 0px);
+    }
+
+    100% {
+        transform: translate(1px, 0px);
+    }
+}
