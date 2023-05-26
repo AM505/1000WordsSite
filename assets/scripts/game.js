@@ -37,7 +37,7 @@ document.getElementById('lives').innerHTML = gameSessionData.lives;
 async function handleLangSubmit(event) {
     event.preventDefault();
 
-    let response = await fetch("resourses/data/" + lang + ".json");
+    let response = await fetch("assets/data/" + lang.toLowerCase() + ".json");
     gameData = await response.json();
 
     shuffle(gameData);
