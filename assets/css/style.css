@@ -181,3 +181,11 @@ body {
         transform: translate(1px, 0px);
     }
 }
+
+.red-text{
+    color:#eb1414;
+}
+
+.green-text{
+    color:#22aa24;
+}
