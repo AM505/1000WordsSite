@@ -1,5 +1,5 @@
-# 1000WordsSite
-Site to show the first 1000 words in a few languages
+=        # 1000WordsSite
+S+*-ite to show the first 1000 words in a few languages
 ## User Experience (UX)
 
 -   ### User stories
@@ -28,12 +28,41 @@ To download and run pencil project:
 * now run `npm start`
 
 Wirefames can be seen here:
+ 
  * [Desktop](documentation/wireframes/desktop_browser.png)
  * [Phone](documentation/wireframes/mobile_browser.png)
 
 ## Features
-* responsive on all devices
-* Interactive elements
+
+The 1000WordsSite site consits of 2 sections: 
+
+* The home page, at "index.html"
+* The game screen at "app.html"
+
+### Home Page
+The home page provides a few paragraphs on the motivation for the project and a short expaination on how to play the game. It also has a form for the user to choose the language they want the game in. 
+* Project motivations and short introduction on how to play
+* Language select
+* Submit button
+
+### Game Screen 
+
+The game screen is meant to feel like a mobile app. Similar to something like AnkiDroid or Memrise. The features of the game sreen occupy the whole page on mobile screens to lend to this feel. 
+
+The app page has the following features: 
+* counters for lives and for correct answers.
+* card showing the word in the selected language and its english translation. The word in the selected language displays first, then on a click event the card is "fliped" to reveal its translation. 
+* A text input box for the answer. The expected answer is the english translation.
+* A text box for the answer. The expected answer is the english translation. 
+* A submit button to check the answer. 
+* A skip button that moves to the next word pair.
+* A "lose animation" on the submission of the incorrect answer. 
+* A "win animation" on submission of the correct answer.
+
+### Features yet to be impelemented
+
+* An end game screen.
+
 
 ## Technologies Used
 * html, css and javascript.
