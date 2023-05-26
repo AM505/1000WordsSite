@@ -52,16 +52,14 @@
 /* css animations from https://www.w3schools.com/css/css3_animations.asp*/
 #win-banner {
     display: none;
-    position: fixed;
-    top: 90%;
     height: 50px;
     width: 100%;
-    background-color: red;
+    background-color:#22aa24;
     animation-name: example;
     animation-duration: 2s;
     animation-iteration-count: 1;
     transform: translateY(100%);
-    text-align: center;
+    border-radius: 15px;
 }
 
 #banner-text {
