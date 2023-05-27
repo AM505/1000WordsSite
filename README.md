@@ -1,5 +1,7 @@
-=        # 1000WordsSite
-S+*-ite to show the first 1000 words in a few languages
+# 1000 Words Site
+Site to show the first 1000 words in a few languages. I want to help language learners get started by learing the 1000 most common words in their target language.
+
+This project is the second of four projects that needs to be completed in order to receive a diploma in Software Development from The Code Institute. Required technologies are HTML5, CSS3 and JavaScript.
 ## User Experience (UX)
 
 -   ### User stories
@@ -8,16 +10,18 @@ S+*-ite to show the first 1000 words in a few languages
         As a first time user I want to
         1. Easily understand what the site is for and how to use it.
         1. Be able to choose what language I want to use.
-        1. Be able to 
-
+   
     -   #### Returning Visitor Goals
-        As a returning visitor I should be able to:
+        As a returning visitor I want to:
         1. track my progress in some way.
         1. to continue enjoy playing the game. 
+        1. to try out new languages.
 
-    -   #### Frequent User Goals
 
--   ### Design
+### Project Requirements
+ - To build an interactive front-end site that responds to user actions. The user should engage actively by altering data and how the site displays. The development process needs to be well documented through a version controls system such as GitHub and contain HTML5, CSS3 and JavaScript.
+
+ ### Design
 
 *   ### Wireframes
 Wireframes were mocked up using pencil project, an open source project similar to something like figma. The develpment is not very active, but in my opinon fills a space in terms of FOSS mockup software. It would be great to see it get more interest. 
@@ -40,12 +44,17 @@ The 1000WordsSite site consits of 2 sections:
 * The game screen at "app.html"
 
 ### Home Page
+
+![alt text](/documentation/features/home_page.png)
+
 The home page provides a few paragraphs on the motivation for the project and a short expaination on how to play the game. It also has a form for the user to choose the language they want the game in. 
 * Project motivations and short introduction on how to play
 * Language select
 * Submit button
 
 ### Game Screen 
+
+![alt text](/documentation/features/app_page.png)
 
 The game screen is meant to feel like a mobile app. Similar to something like AnkiDroid or Memrise. The features of the game sreen occupy the whole page on mobile screens to lend to this feel. 
 
@@ -59,16 +68,16 @@ The app page has the following features:
 * A "lose animation" on the submission of the incorrect answer. 
 * A "win animation" on submission of the correct answer.
 
+### Overall site 
+The site overall has minimal to no styling, this is somewhat intentional from a minimalistic point of view, as well as the aspects of the site that do have color are more attention grabing because of the lack of color else where. 
+It also had the added benifit of saving me some time in terms of styling.
+
 ### Features yet to be impelemented
 
 * An end game screen.
 
 
 ## Technologies Used
-* html, css and javascript.
-
-### Languages Used
-
 * html, css and javascript.
 
 ### Frameworks, Libraries & Programs Used
@@ -116,8 +125,7 @@ Lighthouse for index
     Returning visitors should be able to:
     1. track their progress in some way.
     a. There is no login or cookies, however users can track their progress by counting how many answers they get right, or if they need to flip the card to see the answer.
-
--   #### Frequent User Goals
+    1. New languages can be found at the beggining menu
 
 ### Further Testing
 
