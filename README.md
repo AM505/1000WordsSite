@@ -1,5 +1,5 @@
 # 1000 Words Site
-Site to show the first 1000 words in a few languages. I want to help language learners get started by learing the 1000 most common words in their target language.
+Site to show the first 1000 words in a few languages. I want to help language learners get started by learning the 1000 most common words in their target language.
 
 This project is the second of four projects that needs to be completed in order to receive a diploma in Software Development from The Code Institute. Required technologies are HTML5, CSS3 and JavaScript.
 ## User Experience (UX)
@@ -24,21 +24,21 @@ This project is the second of four projects that needs to be completed in order 
  ### Design
 
 *   ### Wireframes
-Wireframes were mocked up using pencil project, an open source project similar to something like figma. The develpment is not very active, but in my opinon fills a space in terms of FOSS mockup software. It would be great to see it get more interest. 
+Wireframes were mocked up using pencil project, an open source project similar to something like figma. The development is not very active, but in my opinion fills a space in terms of FOSS mock-up software. It would be great to see it get more interest. 
 To download and run pencil project: 
 * run `git clone https://github.com/evolus/pencil.git` in your terminal
 * this project uses electron, so you need to download node.js
-* navigate to the project directory in terminal and run `npm install` to install dependancies
+* navigate to the project directory in terminal and run `npm install` to install dependencies
 * now run `npm start`
 
-Wirefames can be seen here:
+Wireframes can be seen here:
  
  * [Desktop](documentation/wireframes/desktop_browser.png)
  * [Phone](documentation/wireframes/mobile_browser.png)
 
 ## Features
 
-The 1000WordsSite site consits of 2 sections: 
+The 1000WordsSite site consists of 2 sections: 
 
 * The home page, at "index.html"
 * The game screen at "app.html"
@@ -47,7 +47,7 @@ The 1000WordsSite site consits of 2 sections:
 
 ![alt text](/documentation/features/home_page.png)
 
-The home page provides a few paragraphs on the motivation for the project and a short expaination on how to play the game. It also has a form for the user to choose the language they want the game in. 
+The home page provides a few paragraphs on the motivation for the project and a short expatiation on how to play the game. It also has a form for the user to choose the language they want the game in. 
 * Project motivations and short introduction on how to play
 * Language select
 * Submit button
@@ -56,7 +56,7 @@ The home page provides a few paragraphs on the motivation for the project and a 
 
 ![alt text](/documentation/features/app_page.png)
 
-The game screen is meant to feel like a mobile app. Similar to something like AnkiDroid or Memrise. The features of the game sreen occupy the whole page on mobile screens to lend to this feel. 
+The game screen is meant to feel like a mobile app. Similar to something like AnkiDroid or Memrise. The features of the game screen occupy the whole page on mobile screens to lend to this feel. 
 
 The app page has the following features: 
 * counters for lives and for correct answers.
@@ -69,18 +69,17 @@ The app page has the following features:
 * A "win animation" on submission of the correct answer.
 
 ### Overall site 
-The site overall has minimal to no styling, this is somewhat intentional from a minimalistic point of view, as well as the aspects of the site that do have color are more attention grabing because of the lack of color else where. 
-It also had the added benifit of saving me some time in terms of styling.
+The site overall has minimal to no styling, this is somewhat intentional from a minimalistic point of view, as well as the aspects of the site that do have colour are more attention grabing because of the lack of colour else where. 
+It also had the added benefit of saving me some time in terms of styling.
 
-### Features yet to be impelemented
+### Features yet to be implemented
 
 * An end game screen.
 
 
 ## Technologies Used
-* html, css and javascript.
+* HTML, CSS and JavaScript.
 
-### Frameworks, Libraries & Programs Used
 
 ## Testing
 
@@ -118,14 +117,14 @@ Lighthouse for index
 
 -   #### First Time Visitor Goals
      1. Understand what the site is for.
-     a. On visiting the site the user is given a statement infoming of the purpose of the site
-     b.The user is instructed to choose the language they want to practaice with
+     a.  On visiting the site the user is given a statement informing of the purpose of the site
+     b. The user is instructed to choose the language they want to practice with
 
 -   #### Returning Visitor Goals
     Returning visitors should be able to:
     1. track their progress in some way.
     a. There is no login or cookies, however users can track their progress by counting how many answers they get right, or if they need to flip the card to see the answer.
-    1. New languages can be found at the beggining menu
+    1. New languages can be found at the beginning menu
 
 ### Further Testing
 
@@ -139,12 +138,12 @@ Lighthouse for index
 
 * Text on the card can over flow and appear outside of the card if too long.
 
-* Text validation needs work. Trailing whitespace charecters are not ignored and items seperated by comma are treated as seperate correct answers. However if entered seperated by a comma as shown on the card, they will not be accepted.
+* Text validation needs work. Trailing white space characters are not ignored and items separated by comma are treated as separate correct answers. However if entered separated by a comma as shown on the card, they will not be accepted.
 
 ## Deployment
 
 ### Deployment method 
-This will more than likey be through github pages.
+This will more than likely be through github pages.
 
 To deploy to github pages follow these steps:
 
@@ -194,14 +193,16 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 ## Credits
 
 ### Code
-* The implementation of the suffle array algorithm comes from [this stackoverflow post](https://stackoverflow.com/questions/60662796/shuffle-array-in-js).
+* The implementation of the shuffle array algorithm comes from [this stackoverflow post](https://stackoverflow.com/questions/60662796/shuffle-array-in-js).
 
-* The css for centering a div comes from this [w3 schools page](https://www.w3schools.com/css/css_align.asp*/).
+* The CSS for centring a div comes from this [w3 schools page](https://www.w3schools.com/css/css_align.asp*/).
 
-* css animations from this [w3 schools page](https://www.w3schools.com/css/css3_animations.asp*/).
+* CSS animations from this [w3 schools page](https://www.w3schools.com/css/css3_animations.asp*/).
+
 ### Content
-* Followed code institiue example for readme.md 
+* Followed code institute example for readme.md 
 
 ### Media
 
 ### Acknowledgements
+* My mentor Martina Terlević for help in first review of the project.

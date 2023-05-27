@@ -13,6 +13,7 @@ const gameSessionData = {
     indexOfSeen: {},
     lives: 10,
     cor_ans: 0,
+    arr_len: 0,
 };
 
 var flipped = false;
@@ -40,6 +41,7 @@ async function handleLangSubmit(event) {
     let response = await fetch("assets/data/" + lang.toLowerCase() + ".json");
     gameData = await response.json();
     // shuffle parsed json so user gets different experience every time
+    gameSessionData.arr_len = gameData.length;
     shuffle(gameData);
     setCardVal(gameData[0]["original"]);
 
@@ -78,8 +80,8 @@ function handleAnswerSubmit(event) {
     // check if ans close or one of accepted
     if (ansAccepted(ans, currentpair["translation"])) {
         //play some kind of win anim and go to next pair 
-        goToNextPair();
         showWinAnim();
+        goToNextPair();
         //clear text box
         clearTextBox();
     }
@@ -103,10 +105,19 @@ ansAccepted = (ans, corrAns) => {
 
 goToNextPair = () => {
     // increments the card order by one and sets the text to the next json pair
-    gameSessionData.currentPos += 1;
-    let currentpair = gameData[gameSessionData.currentPos];
-    setCardVal(currentpair["original"]);
+    // doesn't increment if all words gone through
+    if (!(gameSessionData.currentPos == gameSessionData.arr_len - 1)) {
+        gameSessionData.currentPos += 1;
+        let currentpair = gameData[gameSessionData.currentPos];
+        setCardVal(currentpair["original"]);
+    }
+    // would implement an else block here to run code telling the user they have won
+    else {
+        document.getElementById("container-popup").style.display = 'inline';
+        document.getElementById('lives-remaining').innerHTML = gameSessionData.lives.toString();
+        document.getElementById('correct-words').innerHTML = gameSessionData.cor_ans.toString();
 
+    }
 }
 
 showWinAnim = () => {
@@ -129,10 +140,10 @@ showLoseAnim = () => {
     ansBox.style.background = 'red';
     // if the player runs out of lives, give 10 more lives
     // don't actually want the player to be able to loose
-    if(gameSessionData.lives < 1){
+    if (gameSessionData.lives < 1) {
         gameSessionData.lives = 10;
     }
-    else{
+    else {
         gameSessionData.lives -= 1;
     }
     document.getElementById('lives').innerHTML = gameSessionData.lives;
