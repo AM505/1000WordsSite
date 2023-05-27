@@ -12,7 +12,7 @@ const gameSessionData = {
     indexOfSeen: {},
     lives: 10,
     cor_ans: 0,
-}
+};
 
 var flipped = false;
 
@@ -26,11 +26,11 @@ document.getElementById('answer').classList.add('active-animation');
 
 document.addEventListener('DOMContentLoaded', handleLangSubmit, false);
 
-document.getElementById("flip-card").addEventListener("click", handleCardClick)
+document.getElementById("flip-card").addEventListener("click", handleCardClick);
 
-document.getElementById("ans-submit").addEventListener("submit", handleAnswerSubmit, false)
+document.getElementById("ans-submit").addEventListener("submit", handleAnswerSubmit, false);
 
-document.getElementById("skip-button").addEventListener("click", handleSkip)
+document.getElementById("skip-button").addEventListener("click", handleSkip);
 
 document.getElementById('lives').innerHTML = gameSessionData.lives;
 
@@ -89,7 +89,7 @@ function handleAnswerSubmit(event) {
 ansAccepted = (ans, corrAns) => {
     ans = ans.toLowerCase();
     corrAns = corrAns.toLowerCase();
-    let ansArray = corrAns.split(',')
+    let ansArray = corrAns.split(',');
 
     return ansArray.includes(ans);
 }
@@ -104,7 +104,7 @@ goToNextPair = () => {
 showWinAnim = () => {
     gameSessionData.cor_ans += 1;
     document.getElementById('cor-ans').innerHTML = gameSessionData.cor_ans;
-    let winBanner = document.getElementById("win-banner")
+    let winBanner = document.getElementById("win-banner");
     winBanner.style.display = 'inline';
     setTimeout(function () {
         winBanner.style.display = 'none';
@@ -113,7 +113,7 @@ showWinAnim = () => {
 
 showLoseAnim = () => {
     let ansBox = document.getElementById('answer');
-    ansBox.style.animation = 'shake 0.5s 3'
+    ansBox.style.animation = 'shake 0.5s 3';
     ansBox.style.background = 'red';
     gameSessionData.lives -= 1;
     document.getElementById('lives').innerHTML = gameSessionData.lives;
@@ -131,7 +131,7 @@ clearTextBox = () => {
 }
 
 function handleSkip(event) {
-    goToNextPair()
+    goToNextPair();
 }
 
 /**
