@@ -6,6 +6,7 @@
 
 var gameData; // global for translation data
 
+// global to store game session data
 const gameSessionData = {
     lang: "",
     currentPos: 0,
@@ -55,6 +56,10 @@ setCardVal = (text) => {
 }
 
 function handleCardClick(event) {
+    // handle card click event
+
+    // if the card is not flipped then flip it and set the state to flipped
+    // otherwise do the reverse
     let currentpair = gameData[gameSessionData.currentPos];
     if (!flipped) {
         setCardVal(currentpair["translation"]);
@@ -105,19 +110,25 @@ goToNextPair = () => {
 }
 
 showWinAnim = () => {
+    // increment the correct answer counter
     gameSessionData.cor_ans += 1;
     document.getElementById('cor-ans').innerHTML = gameSessionData.cor_ans;
+    // show win banner
     let winBanner = document.getElementById("win-banner");
     winBanner.style.display = 'inline';
+    // hide win banner after 2s (anim time)
     setTimeout(function () {
         winBanner.style.display = 'none';
     }, 2000);
 }
 
 showLoseAnim = () => {
+    // turn ans box red and play shake animation
     let ansBox = document.getElementById('answer');
     ansBox.style.animation = 'shake 0.5s 3';
     ansBox.style.background = 'red';
+    // if the player runs out of lives, give 10 more lives
+    // don't actually want the player to be able to loose
     if(gameSessionData.lives < 1){
         gameSessionData.lives = 10;
     }
@@ -125,11 +136,10 @@ showLoseAnim = () => {
         gameSessionData.lives -= 1;
     }
     document.getElementById('lives').innerHTML = gameSessionData.lives;
-
+    //undo animation and clear text box of wrong answer
     setTimeout(function () {
         document.getElementById('answer').style.animation = '';
-        ansBox.style.background = 'white';
-        ansBox.value = '';
+        clearTextBox();
     }, 3000);
 }
 
