@@ -75,6 +75,35 @@ The app page has the following features:
 
 ## Testing
 
+### Validator testing
+
+[HTML of app](https://validator.w3.org/nu/?doc=https%3A%2F%2Fam505.github.io%2F1000WordsSite%2Fapp.html%3Flanguage%3DTurkish)
+![alt text](/documentation/validator/validator_app_html.png)
+Just one warning and one info in validator. 
+
+[HTMl of index](https://validator.w3.org/nu/?doc=https%3A%2F%2Fam505.github.io%2F1000WordsSite%2F)
+
+![alt text](/documentation/validator/validator_index_html.png)
+
+No errors were found with the W3C validator for index.html.
+
+[CSS](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fam505.github.io%2F1000WordsSite%2Fapp.html%3Flanguage%3DTurkish&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+![alt text](/documentation/validator/validator_css.png)
+
+No errors were found with the W3C validator for CSS.
+
+Lighthouse
+
+Lighthouse for app
+
+![alt text](/documentation/lighthouse/lighthouse_app.png)
+
+Lighthouse for index 
+![alt text](/documentation/lighthouse/lighthouse_index.png)
+
+
+
 ### Testing User Stories from User Experience (UX) Section
 
 
@@ -93,9 +122,9 @@ The app page has the following features:
 ### Further Testing
 
 
-    * The Website was tested on Google Chrome, FireFox, Microsoft Edge and Safari browsers.
-    * The website was viewed on a variety of devices such as Desktop, Laptop, motarolla G9
-    * Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+* The Website was tested on Google Chrome, FireFox, Microsoft Edge and Safari browsers.
+* The website was viewed on a variety of devices such as Desktop, Laptop, motarolla G9
+* Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 
 ### Known Bugs
