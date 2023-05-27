@@ -1,3 +1,8 @@
+body {
+    text-align: center;
+}
+
+/* style for the flip card*/
 #flip-card {
     width:100%;
     height: 500px;
@@ -10,6 +15,7 @@
     border-radius: 15px;
 }
 
+/*media queries for less high devices*/
 @media (max-height:800px) {
     #flip-card {
         height: 400px;
@@ -57,9 +63,7 @@
     }
 }
 
-#card-text {
-    vertical-align: middle;
-}
+/* css for index.html*/
 
 #lang-select {
     padding: 10px;
@@ -71,6 +75,9 @@
     border: 3px solid gray;
 }
 
+/*end*/
+
+/*css for central widget, centralises all items inside and stacks them in flex column */
 .central-widget {
     display: flex;
     flex-direction: column;
@@ -111,7 +118,7 @@
 #banner-text {
     color: white;
 }
-
+/*popup animation for win animation */
 @keyframes example {
     100% {
         transform: translateY(-270px);
@@ -120,6 +127,7 @@
 
 /* end */
 
+/*styles for ans submit*/
 #ans-submit {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -132,7 +140,9 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+/*end*/
 
+/*styles for all button and button like things*/
 .buttons {
     height: 50px;
     font-size: large;
@@ -140,13 +150,14 @@
     background-color: #19A7CE;
     font-weight: bold;
 }
-
+/**/
+/*styles for areas you can type text */
 .text-areas {
     height: 50px;
     border-radius: 15px;
     font-size: large;
 }
-
+/*styles for areas that look like you can type text */
 .fake-text-areas {
     display: flex;
     justify-content: center;
@@ -164,24 +175,16 @@
     margin-left: 5px;
     margin-right: 5px;
 }
-
+/*container for lives and correct answer labels*/
 .top-panel {
     display: flex;
     justify-content: center;
 }
-
-.center-text {
-    text-align: center;
-}
-
-body {
-    text-align: center;
-}
-
+/**/
 #lang-select {
     display: inline-block;
 }
-
+/*the shake animation for wrong answer animation*/
 @keyframes shake {
     0% {
         transform: translate(1px, 0px);
@@ -228,10 +231,11 @@ body {
     }
 }
 
+/*color for lives heart font*/
 .red-text{
     color:#eb1414;
 }
-
+/*color for lives check font*/
 .green-text{
     color:#22aa24;
 }

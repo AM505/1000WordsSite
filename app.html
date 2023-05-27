@@ -10,10 +10,10 @@
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"/>
 </head>
 <body>
-
+    <!-- div to contain features in center stacked on top of eachother -->
     <div class="central-widget">
-
             <div class="top-panel">
+                <!-- lives box, shows player life count -->
                 <div id="lives-box" class="fake-text-areas">
                     <div>
                         <i class="fas fa-heart red-text"></i>
@@ -21,6 +21,7 @@
                     <div id="lives">
                     </div>
                 </div>
+                <!-- correct ans box, shows how many correct answers the player got-->
                 <div id="correct-ans" class="fake-text-areas">
                     <div>
                         <i class="far fa-check-square green-text"></i>
@@ -30,21 +31,20 @@
 
                 </div>
             </div>
-
+            <!-- card, shows the word and on being clicked shows its translation in english-->
             <div id="flip-card">
                 <h1 id="card-text"></h1>
             </div>
-
+            <!--form for submitting answer-->
             <div id="bottom-panel">
                 <form action="https://formdump.codeinstitute.net/" id="ans-submit">
                     <input type="text" id="answer" class="text-areas">
                     <input type="submit" value="Check" class="buttons">
                 </form>
-
-                
             </div>
+            <!--button to skip to next word-->
             <button id="skip-button" class="buttons">Skip <i class="fas fa-forward"></i></button>
-
+            <!--winbanner to show users they got a correct answer-->
             <div id="win-banner">
                 <h3 id="banner-text">You Got It!</h3>
             </div>
