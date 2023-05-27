@@ -35,7 +35,6 @@ document.getElementById("skip-button").addEventListener("click", handleSkip);
 document.getElementById('lives').innerHTML = gameSessionData.lives;
 
 async function handleLangSubmit(event) {
-    event.preventDefault();
 
     let response = await fetch("assets/data/" + lang.toLowerCase() + ".json");
     gameData = await response.json();
@@ -87,14 +86,18 @@ function handleAnswerSubmit(event) {
 }
 
 ansAccepted = (ans, corrAns) => {
+    // string manipulation to check if ans is correct
+    // convert to lower case so user doesn't have to worry about capitals
     ans = ans.toLowerCase();
     corrAns = corrAns.toLowerCase();
+    //split comma seperated values
     let ansArray = corrAns.split(',');
-
+    // check if answer user gives is one of accepted
     return ansArray.includes(ans);
 }
 
 goToNextPair = () => {
+    // increments the card order by one and sets the text to the next json pair
     gameSessionData.currentPos += 1;
     let currentpair = gameData[gameSessionData.currentPos];
     setCardVal(currentpair["original"]);
