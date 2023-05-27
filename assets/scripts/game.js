@@ -35,10 +35,10 @@ document.getElementById("skip-button").addEventListener("click", handleSkip);
 document.getElementById('lives').innerHTML = gameSessionData.lives;
 
 async function handleLangSubmit(event) {
-
+    //get language json from server and wait for response
     let response = await fetch("assets/data/" + lang.toLowerCase() + ".json");
     gameData = await response.json();
-
+    // shuffle parsed json so user gets different experience every time
     shuffle(gameData);
     setCardVal(gameData[0]["original"]);
 
@@ -118,7 +118,12 @@ showLoseAnim = () => {
     let ansBox = document.getElementById('answer');
     ansBox.style.animation = 'shake 0.5s 3';
     ansBox.style.background = 'red';
-    gameSessionData.lives -= 1;
+    if(gameSessionData.lives < 1){
+        gameSessionData.lives = 10;
+    }
+    else{
+        gameSessionData.lives -= 1;
+    }
     document.getElementById('lives').innerHTML = gameSessionData.lives;
 
     setTimeout(function () {
